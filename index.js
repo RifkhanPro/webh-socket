@@ -1,7 +1,7 @@
 // const cors = require('cors');
 // const socketio = require('socket.io')
-// const http = require('http');
-// const server = http.createServer(app);
+// const https = require('https');
+// const server = https.createServer(app);
 
 // const io = socketio(server, {
 //     cors: {
@@ -10,17 +10,22 @@
 //         credentials: true
 //     }
 // });
-
+const express = require('express')
+const cors = require('cors')
+const app = express()
 const io = require('socket.io')(8800, {
 	cors: {
-		origin: 'http://18.205.10.114:3000'
+		origin: 'https://localhost:3000'
 	}
 })
 
 let activeUsers = []
+app.get('/', (req, res) => {
+	res.json('socket started')
+})
 
 io.on('connection', socket => {
-	// console.log('Socket Started')
+	console.log('Socket Started')
 	// add new User
 	socket.on('new-user-add', newUserId => {
 		// if user is not added previously
