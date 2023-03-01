@@ -15,7 +15,7 @@ const cors = require('cors')
 const app = express()
 const io = require('socket.io')(8800, {
 	cors: {
-		origin: 'https://localhost:3000'
+		origin: 'https://18.205.10.114:3000'
 	}
 })
 
