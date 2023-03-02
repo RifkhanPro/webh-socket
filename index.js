@@ -11,10 +11,9 @@
 // });
 const express = require('express')
 const cors = require('cors')
-const app = express()
 const https = require('https').createServer();
 
-const io = require('socket.io')(8800, {
+const io = require('socket.io')(app, {
 	cors: {
 		origin: 'https://18.205.10.114:3000'
 	}
