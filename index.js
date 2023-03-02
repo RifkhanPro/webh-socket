@@ -1,10 +1,9 @@
 // const cors = require('cors');
 // const socketio = require('socket.io')
-// const https = require('https');
 // const server = https.createServer(app);
 
 // const io = socketio(server, {
-//     cors: {
+	//     cors: {
 //         origin: 18.205.10.114:3000/, //your website origin
 //         methods: ["GET", "POST"],
 //         credentials: true
@@ -13,6 +12,8 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const https = require('https').createServer();
+
 const io = require('socket.io')(8800, {
 	cors: {
 		origin: 'https://18.205.10.114:3000'
