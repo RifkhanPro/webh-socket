@@ -19,6 +19,7 @@ const io = require('socket.io')(8800, {
 	}
 })
 
+
 let activeUsers = []
 app.get('/', (req, res) => {
 	res.json('socket started')
@@ -56,3 +57,8 @@ io.on('connection', socket => {
 		}
 	})
 })
+
+
+app.listen(8800, '0.0.0.0', () => {
+  console.log('Socket Server running on port 8800');
+});
