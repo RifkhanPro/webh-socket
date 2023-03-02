@@ -9,12 +9,12 @@
 //         credentials: true
 //     }
 // });
-
 const express = require('express')
 const cors = require('cors')
-const app = require('https').createServer();
+const app = express()
+const https = require('https').createServer();
 
-const io = require('socket.io')(app, {
+const io = require('socket.io')(https, {
 	cors: {
 		origin: 'https://18.205.10.114:3000'
 	}
